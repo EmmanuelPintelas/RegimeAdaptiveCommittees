@@ -1,0 +1,38 @@
+{
+  "notes": "RxRx1, 1139 classes, second independent pool: convnext_atto only (weight statistics comparable within the pool), checking the seed_1 efficientnet results on another backbone family. The optimisation ranges were corrected after the first seven draws under the earlier ranges: six sat at the loss of an untrained model, log(1139) = 7.04, and the only one that learned had lr 1.6e-4 and was still improving at epoch 15. Hence lr 3e-5 to 2.5e-4 instead of 1e-4 to 1e-3, AdamW only (one failure was Adam with weight decay 1e-2, an L2 penalty far too large for Adam), 20 to 40 epochs, and abandon_patience 8. Everything else matches configs/pools/rxrx1.json, and these convnext_atto ranges equal its case in rxrx1_mixed.json. Run with --pool-seed 2 --out pools/rxrx1_convnext_atto_seed_2, after --preflight. Frozen into the pool when it starts.",
+  "benchmark": "rxrx1",
+  "data_root": null,
+  "image_size": 96,
+  "pool_size": 100,
+  "max_draws": 150,
+  "select_metric": "auto",
+  "amp": true,
+  "gate": {"min_balanced_acc_x_chance": 1.5, "max_pred_share_excess": 0.4},
+  "training": {"abandon_patience": 8, "abandon_min_loss_drop": 0.01},
+  "augment": {
+    "family_geometry": "flip",
+    "random_family": {
+      "families": ["gauss", "linf", "photometric", "stain"],
+      "ranges": {"gauss": [0.05, 0.25], "linf": [0.05, 0.25], "photometric": [0.4, 0.8], "stain": [0.15, 0.35]},
+      "identity_prob": 0.25
+    }
+  },
+  "store": {"rejected_predictions": true, "rejected_checkpoints": false},
+  "recipe": {
+    "arch": {"fixed": "convnext_atto"},
+    "pretrained": {"fixed": true},
+    "augment": {"choice": ["light_geometric", "heavy_all3", "heavy_all4", "channel_jitter", "heavy_micro"], "weights": [0.5, 0.2, 0.1, 0.1, 0.1]},
+    "optimizer": {"fixed": "adamw"},
+    "lr": {"loguniform": [3e-5, 2.5e-4]},
+    "weight_decay": {"choice": [1e-4, 1e-3, 1e-2]},
+    "batch_size": {"choice": [128, 256], "weights": [0.75, 0.25]},
+    "epochs": {"int_uniform": [20, 50]},
+    "scheduler": {"fixed": "plateau"},
+    "sched_patience": {"int_uniform": [3, 5]},
+    "sched_factor": {"choice": [0.1, 0.2, 0.3, 0.5, 0.7]},
+    "stop_patience": {"int_uniform": [5, 9]},
+    "label_smoothing": {"choice": [0.0, 0.05, 0.1]},
+    "drop_rate": {"choice": [0.0, 0.1, 0.2]},
+    "train_frac": {"fixed": 1.0}
+  }
+}

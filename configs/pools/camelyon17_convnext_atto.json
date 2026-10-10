@@ -1,0 +1,37 @@
+{
+  "notes": "Camelyon17, 2 classes, second independent pool: convnext_atto only (weight statistics comparable within the pool). Everything except the backbone-specific optimisation ranges matches configs/pools/camelyon17.json; the convnext_atto ranges follow the rule used on every benchmark (lr from half the efficientnet lower bound to a third of its upper bound, mostly AdamW, weight decay 1e-4 to 1e-2) and equal its case in camelyon17_mixed.json. Run with --pool-seed 2 --out pools/camelyon17_convnext_atto_seed_2, after --preflight. Frozen into the pool when it starts.",
+  "benchmark": "camelyon17",
+  "data_root": null,
+  "image_size": 96,
+  "pool_size": 100,
+  "max_draws": 150,
+  "select_metric": "auto",
+  "amp": true,
+  "gate": {"min_balanced_acc_x_chance": 1.5, "max_pred_share_excess": 0.4},
+  "augment": {
+    "family_geometry": "flip",
+    "random_family": {
+      "families": ["gauss", "linf", "photometric", "stain"],
+      "ranges": {"gauss": [0.05, 0.25], "linf": [0.05, 0.25], "photometric": [0.4, 0.8], "stain": [0.15, 0.35]},
+      "identity_prob": 0.25
+    }
+  },
+  "store": {"rejected_predictions": true, "rejected_checkpoints": false},
+  "recipe": {
+    "arch": {"fixed": "convnext_atto"},
+    "pretrained": {"fixed": true},
+    "augment": {"choice": ["light_geometric", "heavy_geometric", "blur", "sharpen", "clahe", "colour", "occlusion", "random_family", "heavy_all3", "heavy_all4"]},
+    "optimizer": {"choice": ["adam", "adamw"], "weights": [0.3, 0.7]},
+    "lr": {"loguniform": [1e-4, 1e-3]},
+    "weight_decay": {"choice": [1e-5, 1e-4, 1e-3]},
+    "batch_size": {"choice": [64, 128]},
+    "epochs": {"fixed": 3},
+    "scheduler": {"choice": ["plateau", "halve_each_epoch"], "weights": [0.8, 0.2]},
+    "sched_patience": {"int_uniform": [1, 5]},
+    "sched_factor": {"choice": [0.1, 0.2, 0.3, 0.5, 0.7]},
+    "stop_patience": {"int_uniform": [1, 5]},
+    "label_smoothing": {"choice": [0.0, 0.05, 0.1]},
+    "drop_rate": {"choice": [0.0, 0.1, 0.2]},
+    "train_frac": {"fixed": 1.0}
+  }
+}

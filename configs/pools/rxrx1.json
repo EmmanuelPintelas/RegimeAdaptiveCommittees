@@ -1,0 +1,55 @@
+{
+  "notes": "RxRx1, 1139 classes, ood_val (tuning) and ood_test (test). Single architecture (proposer P2). Review before the first run: the file is frozen into the pool when it starts.",
+  "benchmark": "rxrx1",
+  "data_root": null,
+  "image_size": 96,
+  "pool_size": 100,
+  "max_draws": 150,
+  "select_metric": "auto",
+  "amp": true,
+  "gate": {"min_balanced_acc_x_chance": 1.5, "max_pred_share_excess": 0.4},
+  "augment": {
+    "family_geometry": "flip",
+    "random_family": {
+      "families": ["gauss", "linf", "photometric", "stain"],
+      "ranges": {"gauss": [0.05, 0.25], "linf": [0.05, 0.25], "photometric": [0.4, 0.8], "stain": [0.15, 0.35]},
+      "identity_prob": 0.25
+    }
+  },
+  "store": {"rejected_predictions": true, "rejected_checkpoints": false},
+  "recipe": {
+    "arch": {"fixed": "efficientnet_b0"},
+    "pretrained": {"fixed": true},
+    "augment": {"choice": ["light_geometric", "heavy_all3", "heavy_all4", "channel_jitter", "heavy_micro"], "weights": [0.5, 0.2, 0.1, 0.1, 0.1]},
+    "optimizer": {"choice": ["adam", "adamw"]},
+    "lr": {"loguniform": [2e-4, 3e-3]},
+    "weight_decay": {"choice": [1e-5, 1e-4]},
+    "batch_size": {"choice": [128, 256], "weights": [0.75, 0.25]},
+    "epochs": {"choice": [20, 25, 30, 35]},
+    "scheduler": {"fixed": "plateau"},
+    "sched_patience": {"int_uniform": [3, 5]},
+    "sched_factor": {"choice": [0.1, 0.2, 0.3, 0.5, 0.7]},
+    "stop_patience": {"int_uniform": [5, 9]},
+    "label_smoothing": {"choice": [0.0, 0.05, 0.1]},
+    "drop_rate": {"choice": [0.0, 0.1, 0.2]},
+    "train_frac": {"fixed": 1.0}
+  },
+  "refine": {
+    "n_parents": 20,
+    "children_per_parent": 5,
+    "recipe": {
+      "augment": {"choice": ["plain", "light_geometric"]},
+      "optimizer": {"fixed": "adam"},
+      "lr": {"loguniform": [5e-6, 5e-5]},
+      "weight_decay": {"fixed": 0.0},
+      "batch_size": {"fixed": 128},
+      "epochs": {"choice": [1, 2]},
+      "scheduler": {"fixed": "none"},
+      "sched_patience": {"fixed": 1},
+      "sched_factor": {"fixed": 0.5},
+      "stop_patience": {"fixed": 2},
+      "label_smoothing": {"fixed": 0.0},
+      "train_frac": {"fixed": 1.0}
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "notes": "Settings every pool inherits unless its own configuration overrides them. Read when a pool is started or changed with --config, and merged one level deep under the benchmark's file; the merged result is what gets frozen and hashed into the pool. A resume with --out alone uses the configuration already frozen into that pool, so editing this file can never change a pool that is under way. Tune two_stage_lr_prob here.",
+  "training": {
+    "two_stage_lr_prob": 0.5,
+    "abandon_patience": 5,
+    "abandon_min_loss_drop": 0.001
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "notes": "iWildCam, 182 classes, third independent pool: each member draws its backbone from efficientnet_b0, convnext_atto and regnety_004 with equal probability, so committees can mix backbone families. Optimisation ranges are drawn per backbone: efficientnet_b0 equals configs/pools/iwildcam.json, convnext_atto equals iwildcam_convnext_atto.json, regnety_004 runs from the efficientnet lower bound to two thirds of its upper bound with efficientnet's optimiser and weight-decay choices. Weight statistics are comparable only within one backbone. Everything else matches iwildcam.json. Run with --pool-seed 3 --out pools/iwildcam_mixed_seed_3, after --preflight. Frozen into the pool when it starts.",
+  "benchmark": "iwildcam",
+  "data_root": null,
+  "image_size": 96,
+  "pool_size": 100,
+  "max_draws": 150,
+  "select_metric": "auto",
+  "amp": true,
+  "gate": {"min_balanced_acc_x_chance": 1.5, "max_pred_share_excess": 0.4},
+  "augment": {
+    "family_geometry": "flip",
+    "random_family": {
+      "families": ["gauss", "linf", "photometric", "stain"],
+      "ranges": {"gauss": [0.05, 0.25], "linf": [0.05, 0.25], "photometric": [0.4, 0.8], "stain": [0.15, 0.35]},
+      "identity_prob": 0.25
+    }
+  },
+  "store": {"rejected_predictions": true, "rejected_checkpoints": false},
+  "recipe": {
+    "arch": {"choice": ["efficientnet_b0", "convnext_atto", "regnety_004"]},
+    "pretrained": {"fixed": true},
+    "augment": {"choice": ["light_geometric", "heavy_all3", "heavy_all4", "channel_jitter", "heavy_micro"], "weights": [0.5, 0.2, 0.1, 0.1, 0.1]},
+    "optimizer": {"by": "arch", "cases": {
+      "efficientnet_b0": {"choice": ["adam", "adamw"], "weights": [0.9, 0.1]},
+      "convnext_atto": {"choice": ["adam", "adamw"], "weights": [0.3, 0.7]},
+      "regnety_004": {"choice": ["adam", "adamw"], "weights": [0.9, 0.1]}
+    }},
+    "lr": {"by": "arch", "cases": {
+      "efficientnet_b0": {"loguniform": [1e-4, 1e-3]},
+      "convnext_atto": {"loguniform": [5e-5, 3.3e-4]},
+      "regnety_004": {"loguniform": [1e-4, 6.7e-4]}
+    }},
+    "weight_decay": {"by": "arch", "cases": {
+      "efficientnet_b0": {"choice": [1e-5, 1e-4]},
+      "convnext_atto": {"choice": [1e-4, 1e-3, 1e-2]},
+      "regnety_004": {"choice": [0.0, 1e-5]}
+    }},
+    "batch_size": {"choice": [128, 256], "weights": [0.75, 0.25]},
+    "epochs": {"choice": [3, 6, 9, 12, 15]},
+    "scheduler": {"choice": ["plateau", "halve_each_epoch"], "weights": [0.8, 0.2]},
+    "sched_patience": {"int_uniform": [3, 4]},
+    "sched_factor": {"choice": [0.5, 0.7]},
+    "stop_patience": {"int_uniform": [5, 6]},
+    "label_smoothing": {"choice": [0.0, 0.05, 0.1]},
+    "drop_rate": {"choice": [0.0, 0.1, 0.2]},
+    "train_frac": {"fixed": 1.0}
+  }
+}
