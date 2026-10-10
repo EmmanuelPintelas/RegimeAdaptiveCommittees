@@ -1,0 +1,30 @@
+{
+ "pool": "camelyon17_seed_1",
+ "split": "ood_test_hospital2",
+ "points": 2000,
+ "draws": 2,
+ "spearman_confidence": 0.4708550855085509,
+ "by_sigma": {
+  "0.02": {
+   "mean_flip_rate": 0.05004,
+   "flip_right_over_wrong": 0.3433694325449053,
+   "spearman_low_flips": 0.7442664266426643,
+   "spearman_high_flips": -0.7455865586558655,
+   "partial_given_confidence": -0.6774615710955038
+  },
+  "0.05": {
+   "mean_flip_rate": 0.15234000000000003,
+   "flip_right_over_wrong": 0.7981376431345345,
+   "spearman_low_flips": 0.6665466546654666,
+   "spearman_high_flips": -0.6655985598559856,
+   "partial_given_confidence": -0.5874665794107397
+  },
+  "0.1": {
+   "mean_flip_rate": 0.34299,
+   "flip_right_over_wrong": 1.6880882607036527,
+   "spearman_low_flips": -0.10844284428442845,
+   "spearman_high_flips": 0.10778277827782778,
+   "partial_given_confidence": 0.10960484091276246
+  }
+ }
+}

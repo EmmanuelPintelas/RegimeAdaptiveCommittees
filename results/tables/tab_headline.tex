@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Headline numbers, test split, probability averaging, mean over each benchmark's pools with paired 95\% intervals. $\coll$: range over pools. Greedy reference (test labels): cross-fitted size range and gain. Decider, and budget $k\le10$ (decider / best other rule of Table~\ref{tab:budget}): minus the full pool.}
+\label{tab:headline}
+\setlength{\tabcolsep}{3pt}\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrlccccc}
+\toprule
+benchmark & $K$ & metric & $\coll$ & size & gain & decider & budget $k\le10$ \\
+\midrule
+Camelyon17 & 2 & GM & 1.00--1.00 & 2--6 & $+0.118{\scriptstyle\pm0.002}^{\ast}$ & $+0.110{\scriptstyle\pm0.002}^{\ast}$ & +0.110 / +0.105 \\
+Kather & 9 & GM & 0.80--0.82 & 10--25 & $+0.002{\scriptstyle\pm0.001}^{\ast}$ & -- & -- \\
+iWildCam & 182 & F1 & 0.33--0.37 & 5--10 & $-0.007{\scriptstyle\pm0.005}^{\ast}$ & $-0.002{\scriptstyle\pm0.007}$ & -0.002 / +0.005 \\
+RxRx1 & 1139 & F1 & 0.07--0.09 & 15--34 & $+0.010{\scriptstyle\pm0.003}^{\ast}$ & $+0.002{\scriptstyle\pm0.005}$ & -0.005 / -0.002 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

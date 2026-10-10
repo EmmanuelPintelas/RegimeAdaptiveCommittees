@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Shapley value of each consensus signal (its gain averaged over all removal orders), test score minus the full pool's in points ($\times100$), mean over each benchmark's pools. Method: the decider with P7 and held-out search; alone: the consensus paths only. A column sums to \emph{all five} minus \emph{no signal}.}
+\label{tab:signals}
+\setlength{\tabcolsep}{4pt}\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{2}{c}{Camelyon17} & \multicolumn{2}{c}{iWildCam} & \multicolumn{2}{c}{RxRx1} \\ \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7} signal & method & alone & method & alone & method & alone \\
+\midrule
+confidence (P1) & +0.02 & +2.90 & +0.00 & +0.42 & +0.10 & +0.23 \\
+spectral exponent (P2) & -0.02 & +1.10 & +0.00 & -0.20 & +0.09 & +0.08 \\
+agreement with the pool (P3) & +0.05 & -1.36 & +0.00 & +0.30 & -0.04 & +0.13 \\
+source validation (P6) & -0.01 & -0.75 & +0.00 & +0.26 & -0.02 & +0.07 \\
+weight-noise stability (P8) & -0.03 & +4.86 & +0.00 & -0.30 & -0.14 & -0.07 \\
+\midrule
+all five signals & +10.97 & +6.75 & -0.22 & +0.48 & +0.18 & +0.43 \\
+no signal & +10.97 & +0.00 & -0.22 & +0.00 & +0.19 & +0.00 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Collision-aware greedy (P7), test split, plurality vote (ties by confidence). Confidence, pool agreement: label-free plug-ins, each path at its own size $\hat k$. Oracle: test correctness as plug-ins, built on one half and scored on the other (size per direction; difference from the full pool on the same halves). Greedy: the cross-fitted reference.}
+\label{tab:marginal}
+\setlength{\tabcolsep}{2.5pt}\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrlccccccccc}
+\toprule
+& & & & \multicolumn{2}{c}{P7, confidence} & \multicolumn{2}{c}{P7, pool agr.} & \multicolumn{2}{c}{P7, oracle} & \multicolumn{2}{c}{greedy} \\ \cmidrule(lr){5-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}\cmidrule(lr){11-12} benchmark & $K$ & backbone & full & $\hat k$ & score & $\hat k$ & score & $k$ & $-$ full & $k$ & $-$ full \\
+\midrule
+Camelyon17 & 2 & EffNet-B0 & 0.879 & 37 & 0.899 & 99 & 0.879 & 5/3 & +0.081 & 2/2 & +0.082 \\
+ &  & ConvNeXt-A & 0.810 & 33 & 0.764 & 99 & 0.811 & 3/5 & +0.156 & 4/6 & +0.157 \\
+ &  & mixed & 0.843 & 23 & 0.807 & 99 & 0.844 & 5/7 & +0.122 & 6/4 & +0.123 \\
+\addlinespace
+Kather & 9 & EffNet-B0 & 0.966 & 27 & 0.967 & 37 & 0.967 & 17/23 & +0.003 & 11/23 & +0.003 \\
+ &  & ConvNeXt-A & 0.969 & 19 & 0.968 & 41 & 0.969 & 13/25 & +0.000 & 14/15 & +0.001 \\
+ &  & mixed & 0.972 & 19 & 0.971 & 25 & 0.972 & 29/19 & -0.002 & 16/20 & +0.001 \\
+\addlinespace
+iWildCam & 182 & EffNet-B0 & 0.170 & 68 & 0.177 & 89 & 0.170 & 1/27 & -0.017 & 19/7 & -0.002 \\
+ &  & ConvNeXt-A & 0.166 & 68 & 0.166 & 70 & 0.166 & 4/31 & -0.009 & 20/28 & -0.003 \\
+ &  & mixed & 0.164 & 72 & 0.158 & 88 & 0.163 & 4/33 & -0.016 & 10/8 & -0.004 \\
+\addlinespace
+RxRx1 & 1139 & EffNet-B0 & 0.274 & 59 & 0.274 & 94 & 0.275 & 59/59 & +0.004 & 41/25 & +0.004 \\
+ &  & ConvNeXt-A & 0.198 & 42 & 0.200 & 89 & 0.197 & 35/44 & +0.016 & 24/34 & +0.020 \\
+ &  & mixed & 0.273 & 68 & 0.278 & 83 & 0.275 & 51/44 & +0.009 & 42/21 & +0.005 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

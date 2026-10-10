@@ -1,0 +1,17 @@
+{
+ "pool": "rxrx1_seed_1",
+ "split": "ood_test",
+ "heldout": 6886,
+ "distil": 27546,
+ "teacher_heldout": 0.25339837951715666,
+ "init": "member",
+ "temperature": 1.0,
+ "epochs": 12,
+ "students": 1,
+ "smoke": false,
+ "student_init": "member 17",
+ "before": 0.15661127427296506,
+ "after": 0.21728434943276428,
+ "delta_before": 0.3393421471118927,
+ "delta_after": 0.08936037123203278
+}

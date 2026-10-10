@@ -1,0 +1,30 @@
+{
+ "pool": "camelyon17_convnext_atto_seed_2",
+ "split": "ood_test_hospital2",
+ "points": 2000,
+ "draws": 2,
+ "spearman_confidence": 0.3951875187518752,
+ "by_sigma": {
+  "0.02": {
+   "mean_flip_rate": 0.013935000000000001,
+   "flip_right_over_wrong": 0.23595876908578514,
+   "spearman_low_flips": 0.6944254425442544,
+   "spearman_high_flips": -0.6917611761176118,
+   "partial_given_confidence": -0.634828310728992
+  },
+  "0.05": {
+   "mean_flip_rate": 0.0335475,
+   "flip_right_over_wrong": 0.36285210887668684,
+   "spearman_low_flips": 0.7422622262226223,
+   "spearman_high_flips": -0.7416621662166216,
+   "partial_given_confidence": -0.7062740579851563
+  },
+  "0.1": {
+   "mean_flip_rate": 0.06839,
+   "flip_right_over_wrong": 0.4142086657349527,
+   "spearman_low_flips": 0.6474287428742874,
+   "spearman_high_flips": -0.6477407740774077,
+   "partial_given_confidence": -0.5973841853537415
+  }
+ }
+}

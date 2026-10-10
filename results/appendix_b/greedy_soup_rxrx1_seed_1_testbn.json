@@ -1,0 +1,9 @@
+{
+ "pool": "rxrx1_seed_1",
+ "ingredients": [
+  91
+ ],
+ "tuning": 0.0788219472000336,
+ "test": 0.18385197485475643,
+ "best_member_tuning": 91
+}

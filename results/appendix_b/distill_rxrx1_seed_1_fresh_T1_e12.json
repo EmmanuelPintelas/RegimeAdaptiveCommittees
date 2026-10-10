@@ -1,0 +1,17 @@
+{
+ "pool": "rxrx1_seed_1",
+ "split": "ood_test",
+ "heldout": 6886,
+ "distil": 27546,
+ "teacher_heldout": 0.25339837951715666,
+ "init": "fresh",
+ "temperature": 1.0,
+ "epochs": 12,
+ "students": 1,
+ "smoke": false,
+ "student_init": "fresh efficientnet_b0",
+ "before": 0.018136909036568546,
+ "after": 0.1541730495370216,
+ "delta_before": 0.2527594268321991,
+ "delta_after": 0.14452728629112244
+}

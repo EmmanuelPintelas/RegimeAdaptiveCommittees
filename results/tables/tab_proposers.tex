@@ -1,0 +1,26 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Each proposer family at the size best on the tuning split (balanced accuracy), scored on the test split, probability averaging, over the nine pools: its paths (directions, scales or weights), the pools it applies to, the pools on which one of its paths is the best proposed path, and the difference of its paths from the full pool, worst and best.}
+\label{tab:proposers}
+\setlength{\tabcolsep}{4pt}\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccccc}
+\toprule
+proposer & paths & pools & best on & worst $-$ full & best $-$ full \\
+\midrule
+(P1) confidence & 1 & 9 & 1 & -0.001 & +0.125 \\
+(P2) spectral exponent & 2 & 6 & 0 & -0.008 & +0.066 \\
+(P3) pool agreement & 1 & 9 & 0 & -0.000 & +0.055 \\
+(P4) pseudo-label complementarity & 1 & 9 & 0 & -0.027 & +0.006 \\
+(P5) diversity-regularized conf. & 4 & 9 & 0 & -0.006 & +0.111 \\
+(P6) source validation & 1 & 9 & 0 & -0.003 & +0.070 \\
+(P7) collision-aware greedy & 1 & 9 & 0 & -0.005 & +0.104 \\
+(P8) weight-noise stability & 3 & 9 & 4 & -0.010 & +0.147 \\
+(P9) consensus of proposers, mean & 3 & 9 & 1 & -0.004 & +0.096 \\
+(P10) consensus of proposers, geometric & 3 & 9 & 1 & -0.010 & +0.092 \\
+(P11) consensus of signals, mean & 3 & 9 & 1 & -0.004 & +0.080 \\
+(P12) consensus of signals, geometric & 3 & 9 & 1 & -0.001 & +0.090 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

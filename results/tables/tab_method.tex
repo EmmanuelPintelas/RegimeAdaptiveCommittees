@@ -1,0 +1,25 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Algorithm~\ref{alg:select} with a tuning split; test split, probability averaging. Chosen: a proposed path, or a search family refitted on all of $V$ at size $k$; $\varepsilon$: its deviation. $-$ full: difference from the full pool (paired 95\% interval), and in accuracy. Conservative: the held-out committee instead of the refit. Uniform prior: its choice and difference. Vote: the decider minus the full pool under the plurality vote.}
+\label{tab:method}
+\setlength{\tabcolsep}{2.5pt}\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrlccccccccccc}
+\toprule
+& & & \multicolumn{5}{c}{decider} & & \multicolumn{2}{c}{uniform prior} & & \\ \cmidrule(lr){4-8}\cmidrule(lr){10-11} benchmark & $K$ & backbone & chosen & $k$ & $\varepsilon$ & score & $-$ full & $-$ full (acc.) & conservative & choice & $-$ full & full pool & vote \\
+\midrule
+Camelyon17 & 2 & EffNet-B0 & greedy & 5 & 0.016 & 0.949 & $+0.073{\scriptstyle\pm0.002}^{\ast}$ & +0.067 & +0.073 & greedy 5 & +0.073 & 0.876 & +0.062 \\
+ &  & ConvNeXt-A & greedy & 5 & 0.016 & 0.962 & $+0.145{\scriptstyle\pm0.003}^{\ast}$ & +0.130 & +0.143 & greedy 5 & +0.145 & 0.817 & +0.152 \\
+ &  & mixed & greedy & 7 & 0.016 & 0.959 & $+0.112{\scriptstyle\pm0.002}^{\ast}$ & +0.102 & +0.104 & greedy 7 & +0.112 & 0.847 & +0.116 \\
+\addlinespace
+iWildCam & 182 & EffNet-B0 & top-$k$ & 51 & 0.103 & 0.173 & $+0.002{\scriptstyle\pm0.004}$ & -0.001 & -0.001 & top-$k$ 51 & +0.002 & 0.171 & +0.005 \\
+ &  & ConvNeXt-A & greedy & 5 & 0.099 & 0.154 & $-0.012{\scriptstyle\pm0.017}$ & -0.013 & -0.010 & greedy 5 & -0.012 & 0.166 & -0.007 \\
+ &  & mixed & top-$k$ & 55 & 0.103 & 0.163 & $+0.003{\scriptstyle\pm0.007}$ & +0.001 & +0.004 & top-$k$ 55 & +0.003 & 0.160 & +0.000 \\
+\addlinespace
+RxRx1 & 1139 & EffNet-B0 & P12 & 52 & 0.024 & 0.280 & $+0.004{\scriptstyle\pm0.003}^{\ast}$ & +0.004 & -- & P12 52 & +0.004 & 0.277 & +0.003 \\
+ &  & ConvNeXt-A & top-$k$ & 7 & 0.034 & 0.204 & $+0.001{\scriptstyle\pm0.012}$ & +0.002 & +0.003 & top-$k$ 7 & +0.001 & 0.203 & +0.013 \\
+ &  & mixed & P12 & 15 & 0.023 & 0.275 & $+0.000{\scriptstyle\pm0.004}$ & -0.002 & -- & P12 15 & +0.000 & 0.275 & +0.007 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

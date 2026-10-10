@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Greedy subset search with pure-noise members: $M=100$ members, each right on each tuning point independently with probability 0.7, two classes, plurality vote with ties as errors. Cells: tuning accuracy of the greedy prefix of size $k$ minus its true accuracy, mean over 100 draws, / the deviation of Proposition~\ref{prop:greedy-cost} with $k_{\max}=k$ at $\eta=0.05$.}
+\label{tab:purenoise}
+\setlength{\tabcolsep}{5pt}\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lcccc}
+\toprule
+$k$ & $n=300$ & $n=1{,}000$ & $n=3{,}000$ & $n=10{,}000$ \\
+\midrule
+1 & 0.066 / 0.124 & 0.036 / 0.068 & 0.022 / 0.039 & 0.011 / 0.022 \\
+5 & 0.075 / 0.199 & 0.043 / 0.109 & 0.026 / 0.063 & 0.014 / 0.034 \\
+10 & 0.094 / 0.247 & 0.056 / 0.135 & 0.033 / 0.078 & 0.018 / 0.043 \\
+30 & 0.016 / 0.341 & 0.014 / 0.187 & 0.011 / 0.108 & 0.007 / 0.059 \\
+\midrule
+lower bound (ii), $k=1$ & 0.020 & 0.012 & 0.007 & 0.004 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

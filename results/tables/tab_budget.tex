@@ -1,0 +1,26 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{A budget of $k_{\max}$ members, full pool excluded: test score minus the full pool's, probability averaging, mean over each benchmark's pools. Rules on $V$ choose sizes up to $k_{\max}$; label-free paths are cut at $k_{\max}$; random: mean of twenty draws. Paired 95\% intervals against the full pool (every row but random) have half-widths of at most 0.002 on Camelyon17, 0.011 on iWildCam and 0.008 on RxRx1.}
+\label{tab:budget}
+\setlength{\tabcolsep}{3pt}\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccccccccc}
+\toprule
+ & \multicolumn{3}{c}{Camelyon17} & \multicolumn{3}{c}{iWildCam} & \multicolumn{3}{c}{RxRx1} \\ \cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10} $k\le k_{\max}$ & 5 & 10 & 20 & 5 & 10 & 20 & 5 & 10 & 20 \\
+\midrule
+decider (Algorithm~\ref{alg:select}) & +0.108 & +0.110 & +0.110 & -0.004 & -0.002 & -0.002 & -0.020 & -0.005 & +0.001 \\
+random committee & -0.006 & -0.008 & -0.005 & -0.008 & -0.004 & -0.002 & -0.046 & -0.028 & -0.013 \\
+\addlinespace
+source-validation top-$k$ & -0.130 & -0.096 & -0.044 & -0.002 & +0.000 & -0.000 & -0.053 & -0.037 & -0.020 \\
+confidence top-$k$ (P1) & +0.100 & +0.091 & +0.079 & +0.003 & +0.004 & +0.003 & -0.048 & -0.028 & -0.009 \\
+collision-aware path (P7) & +0.013 & -0.019 & -0.023 & +0.000 & +0.003 & +0.003 & -0.051 & -0.030 & -0.011 \\
+signal consensus, mean (P11) & +0.057 & +0.053 & +0.048 & +0.001 & +0.002 & +0.001 & -0.019 & -0.010 & -0.001 \\
+signal consensus, geometric (P12) & +0.048 & +0.060 & +0.052 & +0.001 & +0.005 & +0.002 & -0.022 & -0.007 & -0.000 \\
+\addlinespace
+top-$k$ on $V$ & +0.097 & +0.094 & +0.100 & +0.002 & -0.003 & +0.001 & -0.019 & -0.009 & -0.000 \\
+greedy on $V$ & +0.108 & +0.103 & +0.097 & -0.007 & -0.003 & -0.002 & -0.010 & -0.002 & -0.001 \\
+ensemble selection (Caruana) & +0.099 & +0.105 & +0.107 & -0.002 & -0.001 & -0.000 & -0.020 & -0.005 & +0.001 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

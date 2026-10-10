@@ -1,0 +1,18 @@
+\begin{table}[h]
+\centering
+\footnotesize
+\caption{Benchmarks and pools: one pool per backbone plan (EfficientNet-B0, ConvNeXt-atto, and a mix with RegNetY-400MF). Metric: geometric mean of recalls (GM) for $K<11$, macro-F1 otherwise.}
+\label{tab:pools}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrlrrrr}
+\toprule
+benchmark & $K$ & metric & pools & $M$ & $n$ tuning & $n$ test \\
+\midrule
+Camelyon17 & 2 & GM & 3 & 100 & 34\,904 & 85\,054 \\
+Kather & 9 & GM & 3 & 100 & -- & 7\,180 \\
+iWildCam & 182 & F1 & 3 & 100 & 14\,961 & 42\,791 \\
+RxRx1 & 1139 & F1 & 3 & 100 & 9\,854 & 34\,432 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

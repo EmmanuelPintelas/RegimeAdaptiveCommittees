@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{What selection can gain: test split, plurality vote (ties by confidence), accuracy. Headroom: points the full pool gets wrong and some member gets right; minority-right: those where the strongest wrong label out-polls the truth in expectation. Best member: cross-fitted share of minority-right points one member covers. Gain: greedy reference (${\le}40$ members, test labels) minus the full pool. Bound: \eqref{eq:gain} with $\nu^{\ge}_k$ ($\nu^{>}_k$ divides it by up to 2); $B(k)$: Proposition~\ref{prop:certificate}.}
+\label{tab:gain}
+\setlength{\tabcolsep}{3pt}\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrlccccccccc}
+\toprule
+& & & & & & & & \multicolumn{2}{c}{gain} & & \\ \cmidrule(lr){9-10} benchmark & $K$ & backbone & full err. & headroom & minority-right & best member & $k$ & in-sample & cross-fitted & bound & $B(k)$ \\
+\midrule
+Camelyon17 & 2 & EffNet-B0 & 0.114 & 0.107 & 0.105 & 0.756 & 2 & +0.076 & +0.076 & 0.157 & 0.160 \\
+ &  & ConvNeXt-A & 0.174 & 0.167 & 0.166 & 0.884 & 6 & +0.141 & +0.140 & 0.285 & 0.290 \\
+ &  & mixed & 0.146 & 0.145 & 0.144 & 0.803 & 4 & +0.112 & +0.112 & 0.231 & 0.231 \\
+\addlinespace
+Kather & 9 & EffNet-B0 & 0.022 & 0.021 & 0.021 & 0.345 & 20 & +0.006 & +0.002 & 0.043 & 0.021 \\
+ &  & ConvNeXt-A & 0.021 & 0.020 & 0.020 & 0.365 & 14 & +0.003 & +0.001 & 0.037 & 0.016 \\
+ &  & mixed & 0.018 & 0.017 & 0.016 & 0.331 & 26 & +0.003 & +0.000 & 0.040 & 0.015 \\
+\addlinespace
+iWildCam & 182 & EffNet-B0 & 0.435 & 0.298 & 0.297 & 0.114 & 6 & +0.015 & -0.015 & 0.270 & 0.263 \\
+ &  & ConvNeXt-A & 0.430 & 0.333 & 0.332 & 0.124 & 6 & +0.051 & -0.017 & 0.429 & 0.411 \\
+ &  & mixed & 0.430 & 0.326 & 0.324 & 0.093 & 5 & +0.035 & -0.003 & 0.288 & 0.297 \\
+\addlinespace
+RxRx1 & 1139 & EffNet-B0 & 0.704 & 0.399 & 0.396 & 0.093 & 33 & +0.012 & +0.004 & 1.059 & 0.658 \\
+ &  & ConvNeXt-A & 0.777 & 0.389 & 0.387 & 0.104 & 25 & +0.025 & +0.020 & 0.870 & 0.684 \\
+ &  & mixed & 0.705 & 0.391 & 0.388 & 0.101 & 26 & +0.014 & +0.008 & 0.849 & 0.691 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

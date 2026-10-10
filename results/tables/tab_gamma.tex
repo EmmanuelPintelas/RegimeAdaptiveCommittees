@@ -1,0 +1,25 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Transfer against the full pool, probability averaging, plain error (Proposition~\ref{prop:transfer}). $a_V$, $a_{\mathrm T}$: disagreement advantage of the full pool over the chosen committee on the tuning and test splits (negative: the committee wins where the two disagree); $\gamma=|a_{\mathrm T}-a_V|$; $\mathrm{dis}_{\mathrm T}$: label-free test disagreement; regret: test error minus the full pool's.}
+\label{tab:gamma}
+\setlength{\tabcolsep}{3.5pt}\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrlcccccccc}
+\toprule
+& & & \multicolumn{3}{c}{in-sample greedy} & \multicolumn{5}{c}{decider} \\ \cmidrule(lr){4-6}\cmidrule(lr){7-11} benchmark & $K$ & backbone & $a_V$ & $a_{\mathrm T}$ & regret & $a_V$ & $a_{\mathrm T}$ & $\gamma$ & $\mathrm{dis}_{\mathrm T}$ & regret \\
+\midrule
+Camelyon17 & 2 & EffNet-B0 & -0.598 & -0.922 & -0.067 & -0.598 & -0.922 & 0.325 & 0.073 & -0.067 \\
+ &  & ConvNeXt-A & -0.721 & -0.919 & -0.131 & -0.721 & -0.923 & 0.202 & 0.141 & -0.130 \\
+ &  & mixed & -0.712 & -0.917 & -0.100 & -0.706 & -0.917 & 0.210 & 0.111 & -0.102 \\
+\addlinespace
+iWildCam & 182 & EffNet-B0 & -0.047 & +0.042 & +0.004 & -0.051 & +0.021 & 0.072 & 0.043 & +0.001 \\
+ &  & ConvNeXt-A & -0.046 & +0.106 & +0.014 & -0.044 & +0.086 & 0.130 & 0.149 & +0.013 \\
+ &  & mixed & -0.080 & +0.048 & +0.003 & -0.021 & -0.023 & 0.003 & 0.038 & -0.001 \\
+\addlinespace
+RxRx1 & 1139 & EffNet-B0 & -0.044 & -0.005 & -0.001 & -0.026 & -0.027 & 0.001 & 0.144 & -0.004 \\
+ &  & ConvNeXt-A & -0.044 & -0.023 & -0.011 & -0.034 & -0.003 & 0.031 & 0.527 & -0.002 \\
+ &  & mixed & -0.034 & +0.020 & +0.006 & -0.010 & +0.008 & 0.019 & 0.279 & +0.002 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

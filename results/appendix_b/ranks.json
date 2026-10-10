@@ -1,0 +1,76 @@
+{
+ "rows": [
+  {
+   "pool": "camelyon17_convnext_atto_seed_2",
+   "benchmark": "camelyon17",
+   "confidence": 0.3951875187518752,
+   "alpha_low": -0.24637263726372638,
+   "conf+alpha_low": 0.10816681668166817,
+   "alpha_high": 0.24637263726372638,
+   "conf+alpha_high": 0.38804680468046804
+  },
+  {
+   "pool": "camelyon17_seed_1",
+   "benchmark": "camelyon17",
+   "confidence": 0.4708550855085509,
+   "alpha_low": 0.41263726372637266,
+   "conf+alpha_low": 0.5597359735973597,
+   "alpha_high": -0.41263726372637266,
+   "conf+alpha_high": 0.02561056105610561
+  },
+  {
+   "pool": "iwildcam_convnext_atto_seed_2",
+   "benchmark": "iwildcam",
+   "confidence": 0.32698469846984696,
+   "alpha_low": -0.14616261626162616,
+   "conf+alpha_low": 0.1570957095709571,
+   "alpha_high": 0.14616261626162616,
+   "conf+alpha_high": 0.28849684968496847
+  },
+  {
+   "pool": "iwildcam_seed_1",
+   "benchmark": "iwildcam",
+   "confidence": 0.31782778277827783,
+   "alpha_low": 0.3098349834983498,
+   "conf+alpha_low": 0.4346714671467147,
+   "alpha_high": -0.3098349834983498,
+   "conf+alpha_high": -0.04972097209720972
+  },
+  {
+   "pool": "kather_convnext_atto_seed_2",
+   "benchmark": "kather",
+   "confidence": 0.05255325532553255,
+   "alpha_low": -0.026894689468946895,
+   "conf+alpha_low": 0.012565256525652565,
+   "alpha_high": 0.026894689468946895,
+   "conf+alpha_high": 0.0328952895289529
+  },
+  {
+   "pool": "kather_seed_1",
+   "benchmark": "kather",
+   "confidence": 0.14565856585658565,
+   "alpha_low": -0.07572757275727572,
+   "conf+alpha_low": 0.0807920792079208,
+   "alpha_high": 0.07572757275727572,
+   "conf+alpha_high": 0.15554755475547555
+  },
+  {
+   "pool": "rxrx1_convnext_atto_seed_2",
+   "benchmark": "rxrx1",
+   "confidence": 0.3231803180318032,
+   "alpha_low": 0.2202940294029403,
+   "conf+alpha_low": 0.30004200420042004,
+   "alpha_high": -0.2202940294029403,
+   "conf+alpha_high": 0.029882988298829884
+  },
+  {
+   "pool": "rxrx1_seed_1",
+   "benchmark": "rxrx1",
+   "confidence": 0.44632463246324633,
+   "alpha_low": 0.0035043504350435045,
+   "conf+alpha_low": 0.4403960396039604,
+   "alpha_high": -0.0035043504350435045,
+   "conf+alpha_high": 0.1900990099009901
+  }
+ ]
+}

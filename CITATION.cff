@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this code or the pools, please cite the paper."
+title: "RegAdCom: code and pools for How Many Models, and Which? Regime-Adaptive Committee Selection under Distribution Shift"
+authors:
+  - family-names: Pintelas
+    given-names: Emmanuel
+    affiliation: "Department of Statistics and Insurance Science, University of Piraeus"
+license: MIT
+type: software
+year: 2026

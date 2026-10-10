@@ -1,0 +1,33 @@
+{
+ "pool": "rxrx1_seed_1",
+ "split": "ood_test",
+ "heldout": 6886,
+ "distil": 27546,
+ "teacher_heldout": 0.25339837951715666,
+ "init": "member",
+ "temperature": 1.0,
+ "epochs": 12,
+ "students": 3,
+ "smoke": false,
+ "singles": [
+  {
+   "init": "member 95",
+   "score": 0.20469779423590523,
+   "delta": 0.0905131921172142
+  },
+  {
+   "init": "member 3",
+   "score": 0.19017596531497824,
+   "delta": 0.12187904864549637
+  },
+  {
+   "init": "member 85",
+   "score": 0.2129852389165492,
+   "delta": 0.08938665688037872
+  }
+ ],
+ "averaged": 0.21426536625542303,
+ "delta_averaged": 0.07871606200933456,
+ "union": 0.20176667191257727,
+ "delta_union": 0.0986526682972908
+}

@@ -1,0 +1,11 @@
+{
+ "pool": "camelyon17_seed_1",
+ "ingredients": [
+  93
+ ],
+ "tuning": 0.9459908129720982,
+ "test": 0.9503934064258615,
+ "test_bn_recalibrated": 0.9392948885869395,
+ "best_member": 93,
+ "best_member_test": 0.9503934064258615
+}

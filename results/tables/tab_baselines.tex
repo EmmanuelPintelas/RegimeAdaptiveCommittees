@@ -1,0 +1,32 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Rules that choose on the tuning split $V$: test score minus the full pool's, probability averaging (log-odds: a weighted vote), mean over each benchmark's pools with paired 95\% interval, and worst pool. Proposed paths: the menu prefix best on $V$ by balanced accuracy, NLL or Brier score.}
+\label{tab:baselines}
+\setlength{\tabcolsep}{3pt}\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{2}{c}{Camelyon17} & \multicolumn{2}{c}{iWildCam} & \multicolumn{2}{c}{RxRx1} \\ \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7} method & mean & worst & mean & worst & mean & worst \\
+\midrule
+decider (Algorithm~\ref{alg:select}) & $+0.110{\scriptstyle\pm0.002}^{\ast}$ & +0.073 & $-0.002{\scriptstyle\pm0.007}$ & -0.012 & $+0.002{\scriptstyle\pm0.005}$ & +0.000 \\
+decider, uniform prior & $+0.110{\scriptstyle\pm0.002}^{\ast}$ & +0.073 & $-0.002{\scriptstyle\pm0.007}$ & -0.012 & $+0.002{\scriptstyle\pm0.005}$ & +0.000 \\
+decider, conservative deployment & $+0.107{\scriptstyle\pm0.002}^{\ast}$ & +0.073 & $-0.002{\scriptstyle\pm0.008}$ & -0.010 & -- & -- \\
+\addlinespace
+full pool against held-out greedy & $+0.110{\scriptstyle\pm0.002}^{\ast}$ & +0.073 & $+0.000{\scriptstyle\pm0.008}$ & -0.012 & $+0.004{\scriptstyle\pm0.003}^{\ast}$ & +0.000 \\
+menu with held-out greedy only & $+0.110{\scriptstyle\pm0.002}^{\ast}$ & +0.073 & $+0.000{\scriptstyle\pm0.008}$ & -0.012 & $+0.005{\scriptstyle\pm0.004}^{\ast}$ & +0.000 \\
+menu with held-out top-$k$ only & $+0.098{\scriptstyle\pm0.002}^{\ast}$ & +0.057 & $-0.001{\scriptstyle\pm0.007}$ & -0.009 & $+0.002{\scriptstyle\pm0.005}$ & +0.000 \\
+\addlinespace
+best member on $V$ & $+0.091{\scriptstyle\pm0.002}^{\ast}$ & +0.062 & $-0.014{\scriptstyle\pm0.013}^{\ast}$ & -0.017 & $-0.054{\scriptstyle\pm0.011}^{\ast}$ & -0.062 \\
+top-$k$ on $V$, $k$ chosen on $V$ & $+0.098{\scriptstyle\pm0.002}^{\ast}$ & +0.057 & $-0.002{\scriptstyle\pm0.008}$ & -0.010 & $+0.003{\scriptstyle\pm0.006}$ & -0.002 \\
+greedy on $V$, $k$ chosen on $V$ & $+0.109{\scriptstyle\pm0.002}^{\ast}$ & +0.073 & $-0.004{\scriptstyle\pm0.007}$ & -0.011 & $+0.001{\scriptstyle\pm0.006}$ & -0.006 \\
+ensemble selection (Caruana) & $+0.101{\scriptstyle\pm0.002}^{\ast}$ & +0.058 & $-0.003{\scriptstyle\pm0.005}$ & -0.008 & $+0.006{\scriptstyle\pm0.004}^{\ast}$ & +0.001 \\
+log-odds weighted vote & $+0.034{\scriptstyle\pm0.001}^{\ast}$ & +0.019 & $+0.000{\scriptstyle\pm0.003}$ & -0.002 & $-0.003{\scriptstyle\pm0.002}^{\ast}$ & -0.003 \\
+linear-pool stacking & $+0.100{\scriptstyle\pm0.002}^{\ast}$ & +0.063 & $-0.010{\scriptstyle\pm0.006}^{\ast}$ & -0.020 & $+0.001{\scriptstyle\pm0.006}$ & -0.005 \\
+\addlinespace
+proposed paths, by balanced accuracy & $+0.072{\scriptstyle\pm0.002}^{\ast}$ & +0.053 & $+0.004{\scriptstyle\pm0.008}$ & -0.001 & $+0.004{\scriptstyle\pm0.002}^{\ast}$ & +0.000 \\
+proposed paths, by NLL & $+0.070{\scriptstyle\pm0.002}^{\ast}$ & +0.055 & $-0.003{\scriptstyle\pm0.004}$ & -0.005 & $+0.000{\scriptstyle\pm0.000}$ & -0.000 \\
+proposed paths, by Brier score & $+0.070{\scriptstyle\pm0.002}^{\ast}$ & +0.055 & $+0.000{\scriptstyle\pm0.003}$ & -0.001 & $+0.006{\scriptstyle\pm0.002}^{\ast}$ & +0.004 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Shared ancestry, test split. Siblings (children of one parent) against independent members of the parent's pool, on the parent's mistakes and elsewhere: error rate and collision probability, pooled over pairs, points and parents. $\hat\theta$: copy rate (Proposition~\ref{prop:ancestry}). Greedy-reference size under the vote, in-sample and cross-fitted per direction; in brackets, distinct parents.}
+\label{tab:ancestry}
+\setlength{\tabcolsep}{3pt}\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrccccccccccc}
+\toprule
+& & \multicolumn{2}{c}{error, parent wrong} & \multicolumn{2}{c}{$\coll$, parent wrong} & \multicolumn{2}{c}{$\coll$, elsewhere} & & \multicolumn{2}{c}{size, in-sample} & \multicolumn{2}{c}{size, cross-fitted} \\ \cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}\cmidrule(lr){10-11}\cmidrule(lr){12-13} benchmark & $K$ & sib. & ind. & sib. & ind. & sib. & ind. & $\hat\theta$ & refined & ind. & refined & ind. \\
+\midrule
+Camelyon17 & 2 & 0.927 & 0.574 & 1.000 & 1.000 & 1.000 & 1.000 & 0.828 & 1 (1) & 2 & 1 (1)/1 (1) & 2/2 \\
+Kather & 9 & 0.781 & 0.452 & 0.969 & 0.842 & 0.979 & 0.783 & 0.600 & 15 (11) & 11 & 19 (13)/19 (11) & 11/23 \\
+iWildCam & 182 & 0.950 & 0.871 & 0.858 & 0.428 & 0.882 & 0.437 & 0.613 & 18 (10) & 10 & 24 (12)/11 (10) & 19/7 \\
+RxRx1 & 1139 & 0.945 & 0.900 & 0.796 & 0.109 & 0.856 & 0.144 & 0.448 & 34 (17) & 29 & 33 (18)/23 (17) & 41/25 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

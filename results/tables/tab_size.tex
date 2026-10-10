@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Test split, probability averaging. Random $k{=}1$: a random member. Greedy reference (test labels): in-sample size and score; cross-fitted sizes per direction and gain over the full pool on the same halves (paired 95\% interval). Search: the best of three stronger searches minus greedy, at the in-sample size. Last column: cross-fitted greedy minus top-$k$ at greedy's size.}
+\label{tab:size}
+\setlength{\tabcolsep}{3pt}\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrlcccccccc}
+\toprule
+& & & & & \multicolumn{2}{c}{in-sample} & \multicolumn{2}{c}{cross-fitted} & & \\ \cmidrule(lr){6-7}\cmidrule(lr){8-9} benchmark & $K$ & backbone & full pool & random $k{=}1$ & $k$ & score & $k$ & gain & search & greedy $-$ top-$k$ \\
+\midrule
+Camelyon17 & 2 & EffNet-B0 & 0.876 & 0.789 & 2 & 0.962 & 2/2 & $+0.085{\scriptstyle\pm0.002}^{\ast}$ & +0.000 & $+0.000{\scriptstyle\pm0.001}$ \\
+ &  & ConvNeXt-A & 0.817 & 0.692 & 5 & 0.968 & 5/5 & $+0.151{\scriptstyle\pm0.003}^{\ast}$ & +0.000 & $+0.002{\scriptstyle\pm0.001}^{\ast}$ \\
+ &  & mixed & 0.847 & 0.798 & 5 & 0.966 & 6/5 & $+0.119{\scriptstyle\pm0.002}^{\ast}$ & +0.000 & $+0.002{\scriptstyle\pm0.001}^{\ast}$ \\
+\addlinespace
+Kather & 9 & EffNet-B0 & 0.967 & 0.929 & 22 & 0.976 & 10/23 & $+0.004{\scriptstyle\pm0.003}^{\ast}$ & +0.001 & $+0.005{\scriptstyle\pm0.003}^{\ast}$ \\
+ &  & ConvNeXt-A & 0.969 & 0.932 & 15 & 0.974 & 25/17 & $+0.001{\scriptstyle\pm0.002}$ & +0.000 & $+0.000{\scriptstyle\pm0.002}$ \\
+ &  & mixed & 0.972 & 0.933 & 13 & 0.978 & 12/11 & $+0.000{\scriptstyle\pm0.002}$ & +0.000 & $+0.002{\scriptstyle\pm0.003}$ \\
+\addlinespace
+iWildCam & 182 & EffNet-B0 & 0.171 & 0.152 & 27 & 0.188 & 10/9 & $-0.005{\scriptstyle\pm0.010}$ & +0.003 & $-0.011{\scriptstyle\pm0.015}$ \\
+ &  & ConvNeXt-A & 0.166 & 0.137 & 7 & 0.186 & 9/10 & $-0.011{\scriptstyle\pm0.010}^{\ast}$ & +0.000 & $-0.006{\scriptstyle\pm0.013}$ \\
+ &  & mixed & 0.160 & 0.141 & 5 & 0.193 & 8/5 & $-0.004{\scriptstyle\pm0.009}$ & +0.000 & $-0.000{\scriptstyle\pm0.012}$ \\
+\addlinespace
+RxRx1 & 1139 & EffNet-B0 & 0.277 & 0.183 & 31 & 0.286 & 34/29 & $+0.005{\scriptstyle\pm0.004}^{\ast}$ & +0.002 & $+0.004{\scriptstyle\pm0.005}$ \\
+ &  & ConvNeXt-A & 0.203 & 0.119 & 12 & 0.222 & 15/20 & $+0.017{\scriptstyle\pm0.006}^{\ast}$ & +0.002 & $+0.008{\scriptstyle\pm0.006}^{\ast}$ \\
+ &  & mixed & 0.275 & 0.160 & 33 & 0.288 & 30/24 & $+0.007{\scriptstyle\pm0.003}^{\ast}$ & +0.002 & $+0.003{\scriptstyle\pm0.004}$ \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
