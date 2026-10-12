@@ -60,7 +60,7 @@ No number in them is typed by hand.
 
 ## 2. Download the pools
 
-**Link: to be added.**
+**https://drive.google.com/drive/folders/1BolnzXbJ91IHrmFyV0o_Zpc-0fzlPB1q?usp=sharing**
 
 The release is one folder per benchmark. Each pool comes as standalone zip parts:
 
